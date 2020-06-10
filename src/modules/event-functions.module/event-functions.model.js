@@ -9,18 +9,22 @@ const {
 
 class EventFunction {
   static async getEventFunctions() {
-    const events = await DbHelper.executeQuery(list);
-    return events;
+    const eventFunctions = await DbHelper.executeQuery(list);
+    return eventFunctions;
   }
 
   static async postEventFunction(newEventFunction) {
-    const event = await DbHelper.executeQuery(add, newEventFunction, "i");
-    return event;
+    const eventFunction = await DbHelper.executeQuery(
+      add,
+      newEventFunction,
+      "i"
+    );
+    return eventFunction;
   }
 
   static async getEventFunction(id) {
-    const event = await DbHelper.executeQuery(get, { id });
-    return event;
+    const eventFunction = await DbHelper.executeQuery(get, { id });
+    return eventFunction;
   }
 
   static async deleteEventFunction(id) {
